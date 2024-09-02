@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDFCA</title>
+<style>
+    body {
+	background: linear-gradient(135deg, #e55d87 0%, #5fc3e4 100%);
+}
+</style>
+</head>
+<body>
+<h2>Анализ окраски текста</h2>
+<form id="image-form" enctype="multipart/form-data" action="." method="POST">
+    <table>
+        <tr>
+            <th>
+                <label for="pdf">Выберите файл: </label>
+            </th>
+            <th>
+                <input
+                    type="file"
+                    id="pdf"
+                    name="image"
+                    accept="application/pdf" />
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <button>Предсказать окраску</button>
+            </th>
+        </tr>
+    </table>
+</form>
+{% if sentiment %}
+<p><b>Эмоциональная окраска:</b> {{sentiment}}</p>
+{% endif %}
+</body>
+</html>
